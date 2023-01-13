@@ -10,4 +10,20 @@ AWS Resources used:
 All  the three tier helps in keeping the flow of the application going.
 
 Step 1: Settingup VPC, Subnets, Internet gateway and NAT gateway
-A VPC is created with 6 subnets, 5 routetables and 3 network connections. In total we have choosen 2 availability zones and 2 public subnets and 4 private subnets. 
+A VPC is created with 6 subnets and 5 routetables. In total i have choosen 2 availability zones and 2 public subnets and 4 private subnets. 
+There is one NAT gateway per availability zone.
+VPC Name: project-3-tier-vpc
+Subnets: Public: project-3-tier-subnet-public1-us-east-1a
+                 project-3-tier-subnet-public2-us-east-1b
+        Private: project-3-tier-subnet-private1-us-east-1a
+                 project-3-tier-subnet-private2-us-east-1b
+                 project-3-tier-subnet-private3-us-east-1a
+                 project-3-tier-subnet-private4-us-east-1b
+Internet Gateway: project-3-tier-igw
+
+
+
+Step 2: Creation of EC2 using launch templates and Creation of Auto Scaling Groups.
+A Total of 2 security groups have been created. 
+Project-3-tier-securitygroup1
+Project-3-tier-securitygroup2
