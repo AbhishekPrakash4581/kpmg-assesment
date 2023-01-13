@@ -10,6 +10,7 @@ AWS Resources used:
 All  the three tier helps in keeping the flow of the application going.
 
 Step 1: Settingup VPC, Subnets, Internet gateway and NAT gateway
+
 A VPC is created with 6 subnets and 5 routetables. In total i have choosen 2 availability zones and 2 public subnets and 4 private subnets. 
 There is one NAT gateway per availability zone.
 VPC Name: project-3-tier-vpc
@@ -22,8 +23,34 @@ Subnets: Public: project-3-tier-subnet-public1-us-east-1a
 Internet Gateway: project-3-tier-igw
 
 
-
 Step 2: Creation of EC2 using launch templates and Creation of Auto Scaling Groups.
+
 A Total of 2 security groups have been created. 
 Project-3-tier-securitygroup1
 Project-3-tier-securitygroup2
+
+Post security group creation , EC2 instances have been created with the help of Launch templates by using of the security groups which was created before.
+Two Launch templates have been created One for Web and one for Application:
+Launch template Name : 
+1. Project-3tier-launch
+2. Project-3tier-application
+
+Autoscaling group has been created to both Public subnets and Private subnets
+1. Project-3tier-web-autoscaling ( Autoscaling group for Public subnet)
+2. Project-3tier-application-autoscaling ( Autoscaling group for Private subnet) 
+
+Instance ID'S: 
+1. i-0b905cf4724678f13
+2. i-0097df4cf56b1be59 : Public IPV4: 3.91.104.217
+3. i-0a7eb33165147ac44 : Public IPV4: 54.209.190.234
+4. i-0e793eee0e09d5c1f
+
+Step 3: Creating Database
+
+A new Database subnet group has been created
+DB Subnet group name: project-3tier-db-subnetgroup
+
+A standard Mysql DB has been created with version '8.0.30'. And in Settings section, a master password is created and saved.
+
+Conclusion: Test the EC2's created
+For Testing access the IPV4 of Public Instances: '3.91.104.217' and '54.209.190.234'
