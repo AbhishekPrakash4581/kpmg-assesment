@@ -1,1 +1,13 @@
+Challenge #1
+3 Tier Environment
+Project Name: Project-3-tier
 
+AWS Resources used: 
+1. AWS VPC
+2. AWS Compute services ( EC2, Security group, Loadbalancers)
+3. AWS RDS
+
+All  the three tier helps in keeping the flow of the application going.
+
+Step 1: Settingup VPC, Subnets, Internet gateway and NAT gateway
+A VPC is created with 6 subnets, 5 routetables and 3 network connections. In total we have choosen 2 availability zones and 2 public subnets and 4 private subnets. 
